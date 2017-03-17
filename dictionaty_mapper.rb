@@ -17,12 +17,13 @@ p Benchmark.measure {
   puts "Enter 10 digit number"
 
   digits = gets.chomp
-  # digits = '2282668687'
+  #e.g. digits = '2282668687'
   unless /^\d{10}$/ === digits
     puts "Please enter correct numbers."
     exit 0
   end
 
+  puts "parsing number #{digits}"
   if digits =~ /[0-1]/
     puts 'invalid number'
     exit 0
@@ -54,6 +55,7 @@ p Benchmark.measure {
     end
   end
 
+  puts 'Scanning...'
   hash.each_pair do |key, exp|
     values[key] = input.scan(Regexp.new(exp)).map(&:join)
   end
@@ -73,6 +75,7 @@ p Benchmark.measure {
     puts products.to_s
   end
 
+  puts 'Computing..........'
   element_pattern.each do |pattern|
     position = 0
     is_blank = true
