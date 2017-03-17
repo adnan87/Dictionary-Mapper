@@ -1,4 +1,4 @@
-  input = File.open('input1.txt', 'r').read
+  input = File.open('input.txt', 'r').read
 
   letters = {
     "2" => ["A", "B", "C"],
